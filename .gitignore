@@ -4,6 +4,7 @@ frontend/out/
 frontend/dist/
 frontend/.vite/
 frontend/release/
+frontend/*.tsbuildinfo
 
 # Python / backend
 backend/.venv/
