@@ -1,0 +1,10 @@
+{
+  "name": "jarvis",
+  "version": "0.1.0",
+  "private": true,
+  "description": "JARVIS — futuristic desktop AI assistant (foundation)",
+  "scripts": {
+    "dev:frontend": "npm --prefix frontend run dev",
+    "dev:backend": "python backend/main.py"
+  }
+}
