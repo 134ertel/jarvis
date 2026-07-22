@@ -20,8 +20,9 @@ working end to end — see below. A hardening pass has since added: a real
 confirmation modal for every risky action, a persisted action-history audit
 log, in-memory caching across every JSON store, a real health-check-driven
 startup with automatic crash recovery, global error handling on both sides,
-smoother animations with reduced-motion support, and a wired-but-unpublished
-update system — see [Security, performance, and quality](#security-performance-and-quality)
+smoother animations with reduced-motion support, and a fully working
+update system (real GitHub repo, real published release) — see
+[Security, performance, and quality](#security-performance-and-quality)
 below. The Conversations sidebar page is still a placeholder. What exists:
 the full UI shell (sidebar, animated AI-state orb, chat, system panel, Memory
 page, Automations page, a dedicated AI page for connection status/testing and
@@ -635,9 +636,15 @@ polish on what already existed.
   `prefers-reduced-motion`.
 - **Update system** — `electron-updater` is fully wired (version display,
   check/download/install flow, a Settings "Updates" card with a progress
-  bar), but points at a placeholder GitHub repo until you fill in your own —
-  see `package.json`'s `build.publish`. Until then, "Check for updates"
-  correctly fails with a friendly message rather than doing nothing real.
+  bar) and points at a real, public GitHub repo:
+  [github.com/134ertel/jarvis](https://github.com/134ertel/jarvis) — see
+  `package.json`'s `build.publish`. Release `v0.1.0` is published (not a
+  draft) with a verified, well-formed `latest.yml`. To ship a future update:
+  bump `version` in `frontend/package.json`, then run
+  `npx electron-builder --win --publish always` (with a `GH_TOKEN` env var
+  set to a token with `repo` scope) from `frontend/`, and un-draft the
+  release it creates with `gh release edit <tag> --draft=false` if it isn't
+  already public.
 
 **Verification note:** the permission-caching fix was the one most likely to
 silently reintroduce the exact bug it fixes if done wrong (a per-instance

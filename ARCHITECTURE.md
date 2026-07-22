@@ -150,7 +150,8 @@ fire-and-forget spawn with no readiness check, global error handling on both
 sides (clean 500s, a React error boundary, automatic view recovery once the
 backend comes back), smoother AI-core state transitions with
 `prefers-reduced-motion` support, and `electron-updater` wired end to end
-(pointed at a placeholder repo pending real release hosting). A genuine,
+(pointed at a real, public GitHub repo — github.com/134ertel/jarvis — with a
+published `v0.1.0` release; `latest.yml` verified well-formed). A genuine,
 previously-existing permission bug was also fixed in the process: organizing
 a folder didn't re-check its permission at confirmation time the way closing
 an app already did.
